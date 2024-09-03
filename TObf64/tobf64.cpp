@@ -105,11 +105,11 @@ bool TObf64::protect(const std::vector<FUNCTION_INFO>& functions)
 
         Transform::process(current_code, addr, obf_code);
 
+        //此处跳转回原函数混淆结束的位置，所以不需要修改text段的内容，直接追加到混淆代码
         AsmUtils::create_jmp(addr, patch_end_addr, end_patch);
         obf_code.insert(obf_code.end(), end_patch.data(), end_patch.data() + end_patch.size());
         addr += end_patch.size();
     }
-
 
     m_pe.create_section(".tobf64", obf_code.data(), obf_code.size(), 0x60000020);
     std::string file_path = m_pe.file_path().append(".obf.exe");
