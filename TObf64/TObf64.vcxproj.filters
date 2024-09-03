@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="TObf64">
+      <UniqueIdentifier>{9e1cf3ae-fa5e-4e45-a619-f76492502373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TObf64\Utils">
+      <UniqueIdentifier>{8f506dfb-6ccd-4c1d-b1ca-fc3787f1242b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TObf64\Transform">
+      <UniqueIdentifier>{3f1a3561-6de2-40ea-b983-2332966eefcd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>TObf64</Filter>
+    </ClCompile>
+    <ClCompile Include="disasm.cpp">
+      <Filter>TObf64</Filter>
+    </ClCompile>
+    <ClCompile Include="pefile64.cpp">
+      <Filter>TObf64</Filter>
+    </ClCompile>
+    <ClCompile Include="obfhandler.cpp">
+      <Filter>TObf64</Filter>
+    </ClCompile>
+    <ClCompile Include="tobf64.cpp">
+      <Filter>TObf64</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="disasm.h">
+      <Filter>TObf64</Filter>
+    </ClInclude>
+    <ClInclude Include="pefile64.h">
+      <Filter>TObf64</Filter>
+    </ClInclude>
+    <ClInclude Include="fileutils.h">
+      <Filter>TObf64\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="tobf64.h">
+      <Filter>TObf64</Filter>
+    </ClInclude>
+    <ClInclude Include="transform.h">
+      <Filter>TObf64\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="obfhandler.h">
+      <Filter>TObf64\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="asmutils.h">
+      <Filter>TObf64\Transform</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
