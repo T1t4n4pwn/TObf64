@@ -76,6 +76,8 @@ bool process_mov(INST_INFO insn, std::vector<uint8_t>& obf_code, uint64_t& curre
         }
     }
 
+    //mov reg, mem
+
     return false;
 }
 
