@@ -101,16 +101,16 @@ bool process_call(INST_INFO insn, std::vector<uint8_t>& obf_code, uint64_t& curr
     /*处理 FF15 call*/
     if (insn.bytes[0] == 0xFF && insn.bytes[1] == 0x15) {
         uint64_t dest_addr = insn.address + insn.operands[0].mem.disp.value + 6;
-        //TODO: 修复FF15call处理的bug
-        a.call(x86::qword_ptr(dest_addr));
-        
-        Serializer serial;
-        Error err = serial.serialize(program, current_addr);
-        if (err == ErrorCode::None) {
-            obf_code.insert(obf_code.end(), serial.getCode(), serial.getCode() + serial.getCodeSize());
-            current_addr += serial.getCodeSize();
-            return true;
-        }
+
+        uint8_t opcode[6] = { 0xFF, 0x15, 0x0, 0x0, 0x0, 0x0 };
+        uint32_t operand = dest_addr - current_addr - 6;
+        memcpy(&opcode[2], &operand, 4);
+
+        obf_code.insert(obf_code.end(), opcode, opcode + sizeof(opcode));
+
+        current_addr += sizeof(opcode);
+
+        return true;
     }
 
     return false;
